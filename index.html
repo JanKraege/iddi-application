@@ -1,180 +1,698 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jan Kraege – IDDP Application</title>
 
   <style>
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
     }
 
     body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
       background: #ffffff;
+      color: #111111;
+    }
+
+    .page {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 32px 28px 28px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 70px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      font-size: 15px;
+      letter-spacing: 0.2px;
+    }
+
+    .logo {
+      width: 36px;
+      height: 32px;
+      background: #ffcc00;
+      clip-path: polygon(50% 0%, 100% 75%, 75% 75%, 50% 35%, 25% 75%, 0% 75%);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      text-decoration: none;
       color: #111;
     }
 
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-
-    h1 {
-      font-size: 48px;
-      margin-bottom: 20px;
-    }
-
-    h2 {
-      margin-bottom: 10px;
-    }
-
-    p {
-      line-height: 1.6;
-      color: #444;
+    .connect {
+      background: #ffcc00;
+      color: #111;
+      padding: 13px 22px;
+      border-radius: 7px;
+      text-decoration: none;
+      font-weight: 800;
+      box-shadow: 0 6px 14px rgba(255, 204, 0, 0.3);
     }
 
     .hero {
-      margin-bottom: 60px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+      margin-bottom: 58px;
     }
 
-    .highlight {
-      color: #0077cc;
-      font-weight: bold;
+    h1 {
+      font-size: 50px;
+      line-height: 1.12;
+      letter-spacing: -1.8px;
+      margin: 0 0 28px;
     }
 
-    .card {
-      background: #f5f7fa;
-      padding: 30px;
-      border-radius: 12px;
-      margin-bottom: 25px;
+    h2 {
+      margin: 0 0 16px;
+      font-size: 27px;
+      letter-spacing: -0.4px;
+    }
+
+    h3 {
+      margin: 0 0 14px;
+      font-size: 20px;
+      letter-spacing: -0.2px;
+    }
+
+    p {
+      color: #222;
+      line-height: 1.65;
+      font-size: 16px;
+      margin: 0 0 12px;
+    }
+
+    .yellow {
+      color: #ffcc00;
+    }
+
+    .hero-text p {
+      max-width: 570px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+      align-items: center;
     }
 
     .btn {
-      display: inline-block;
-      background: #ffcc00;
-      color: #000;
-      padding: 14px 22px;
-      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 24px;
+      border-radius: 7px;
+      border: 2px solid #111;
       text-decoration: none;
-      font-weight: bold;
-      margin-top: 20px;
+      color: #111;
+      font-weight: 800;
+      background: #fff;
+      cursor: pointer;
+      min-width: 170px;
     }
 
-    .btn:hover {
-      background: #e6b800;
+    .btn-primary {
+      background: #ffcc00;
+      border-color: #ffcc00;
+      box-shadow: 0 8px 18px rgba(255, 204, 0, 0.25);
     }
 
-    .grid {
+    .scroll {
+      margin-top: 38px;
+      font-size: 13px;
+      color: #333;
+    }
+
+    .video-card {
+      height: 370px;
+      border-radius: 14px;
+      overflow: hidden;
+      position: relative;
+      background:
+        linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.28)),
+        url("https://images.unsplash.com/photo-1523428096881-5bd79d043006?q=80&w=1200&auto=format&fit=crop");
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.17);
+    }
+
+    .play {
+      width: 78px;
+      height: 78px;
+      background: white;
+      border-radius: 999px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 34px;
+      padding-left: 5px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.18);
+    }
+
+    .video-title {
+      position: absolute;
+      left: 34px;
+      bottom: 28px;
+      color: white;
+      font-size: 30px;
+      line-height: 1.18;
+      font-weight: 800;
+      transform: rotate(-2deg);
+      text-shadow: 0 2px 10px rgba(0,0,0,0.35);
+    }
+
+    .video-title::after {
+      content: "";
+      display: block;
+      width: 140px;
+      height: 5px;
+      background: #ffcc00;
+      border-radius: 999px;
+      margin-top: 5px;
+    }
+
+    .wide-card {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 40px;
+      align-items: center;
+      border: 1px solid #e7e7e7;
+      border-radius: 16px;
+      padding: 34px;
+      margin-bottom: 28px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.055);
+      background: #fff;
+    }
+
+    .payment-visual {
+      min-height: 145px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      position: relative;
+      border-right: 1px solid #e4e4e4;
+      padding-right: 25px;
+    }
+
+    .payment-visual::before {
+      content: "";
+      position: absolute;
+      width: 72%;
+      height: 2px;
+      border-top: 2px dashed #777;
+      top: 52%;
+      left: 14%;
+      z-index: 0;
+    }
+
+    .big-icon {
+      width: 68px;
+      height: 68px;
+      border-radius: 999px;
+      background: #fff2b8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 35px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .plain-icon {
+      font-size: 48px;
+      background: white;
+      position: relative;
+      z-index: 2;
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin: 28px 0;
+    }
+
+    .card {
+      border: 1px solid #e7e7e7;
+      border-radius: 16px;
+      background: white;
+      padding: 28px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.045);
+    }
+
+    .icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 999px;
+      background: #fff1b5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .profile-box {
+      border: 1px solid #e7e7e7;
+      border-radius: 16px;
+      background: white;
+      padding: 26px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.045);
+      margin-top: 28px;
+    }
+
+    .center-title {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .center-title::after,
+    .underline::after {
+      content: "";
+      display: block;
+      width: 55px;
+      height: 4px;
+      background: #ffcc00;
+      border-radius: 999px;
+      margin: 12px auto 0;
+    }
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .mini-card {
+      border: 1px solid #e7e7e7;
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.04);
+      background: white;
+    }
+
+    .mini-card .icon {
+      width: 48px;
+      height: 48px;
+      font-size: 24px;
+      margin-bottom: 16px;
+      background: #fff8d8;
+      color: #111;
+    }
+
+    ul {
+      padding-left: 17px;
+      margin: 0;
+      color: #222;
+      line-height: 1.55;
+      font-size: 15px;
+    }
+
+    li {
+      margin-bottom: 9px;
+    }
+
+    .bottom-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 40px;
+      margin: 30px 0;
+    }
+
+    .underline {
+      margin-bottom: 22px;
+    }
+
+    .underline::after {
+      margin: 10px 0 0;
+    }
+
+    .bring-item {
+      display: grid;
+      grid-template-columns: 58px 1fr;
+      gap: 18px;
+      margin-bottom: 22px;
+      border-bottom: 1px solid #eeeeee;
+      padding-bottom: 18px;
+    }
+
+    .bring-item:last-child {
+      border-bottom: none;
+    }
+
+    .bring-item .icon {
+      margin: 0;
+      width: 52px;
+      height: 52px;
+      font-size: 24px;
+    }
+
+    .ideas-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .idea-card {
+      border: 1px solid #e7e7e7;
+      border-radius: 14px;
+      padding: 25px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.04);
+      background: white;
+    }
+
+    .idea-card .icon {
+      margin: 0 auto 18px;
+    }
+
+    .cta {
+      display: grid;
+      grid-template-columns: 110px 1fr auto;
+      align-items: center;
+      gap: 25px;
+      border: 1px solid #e7e7e7;
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.045);
+      margin-top: 38px;
+    }
+
+    .rocket {
+      font-size: 72px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
     }
 
     footer {
-      margin-top: 60px;
-      font-size: 14px;
-      color: #777;
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      color: #555;
+      font-size: 13px;
+      margin-top: 28px;
+      padding-bottom: 20px;
+      flex-wrap: wrap;
     }
 
-    @media (max-width: 768px) {
-      .grid {
+    @media (max-width: 950px) {
+      nav {
+        flex-direction: column;
+        gap: 22px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 18px;
+      }
+
+      .hero,
+      .wide-card,
+      .bottom-grid,
+      .cta {
         grid-template-columns: 1fr;
       }
 
+      .section-grid,
+      .profile-grid,
+      .ideas-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .payment-visual {
+        border-right: none;
+        border-bottom: 1px solid #e4e4e4;
+        padding-right: 0;
+        padding-bottom: 25px;
+      }
+
       h1 {
-        font-size: 34px;
+        font-size: 38px;
+      }
+
+      .page {
+        padding: 24px 18px;
       }
     }
   </style>
 </head>
 
 <body>
+  <div class="page">
 
-<div class="container">
+    <nav>
+      <div class="brand">
+        <div class="logo"></div>
+        <span>COMMERZBANK</span>
+      </div>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1>From Sydney to Frankfurt</h1>
-    <p>
-      I'm <span class="highlight">Jan Kraege</span>, currently in Sydney exploring how digital systems shape global experiences.
-      This application reflects my motivation to actively contribute to the future of <strong>digital banking</strong>.
-    </p>
+      <div class="nav-links">
+        <a href="#about">About Me</a>
+        <a href="#profile">My Profile</a>
+        <a href="#ideas">Ideas</a>
+        <a href="#why-iddp">Why IDDP</a>
+        <a href="#contact">Contact</a>
+        <a class="connect" href="mailto:jan.kraege@icloud.com">Let’s connect</a>
+      </div>
+    </nav>
 
-    <!-- DOWNLOAD BUTTON -->
-    <a href="Jan%20Kraege%20CV.pdf" download class="btn">
-      📄 Download CV
-    </a>
-  </section>
+    <section class="hero" id="about">
+      <div class="hero-text">
+        <h1>
+          From Sydney to Frankfurt — building digital banking that works
+          <span class="yellow">globally.</span>
+        </h1>
 
-  <!-- WHY BANKING -->
-  <section class="card">
-    <h2>💡 Why digital banking should be seamless</h2>
-    <p>
-      Whether paying abroad, managing finances or interacting with digital products –
-      the future of banking must be <strong>global, intuitive and frictionless</strong>.
-      I am particularly fascinated by how financial ecosystems can be designed
-      to create real value for users across borders.
-    </p>
-  </section>
+        <p>
+          I’m Jan Kraege, currently completing my Master’s in Sydney.
+          My interest: how digital systems shape real-world experiences —
+          especially in moments where they fail.
+        </p>
 
-  <!-- WHY IDDP -->
-  <section class="card">
-    <h2>🚀 Why IDDP</h2>
-    <p>
-      I want to be part of a program that does not just observe transformation,
-      but actively builds it across teams, markets and technologies.
-      The IDDP offers exactly this opportunity: combining international exposure
-      with real impact in digital transformation.
-    </p>
-  </section>
+        <div class="buttons">
+          <a href="#story" class="btn btn-primary">▶ Watch my Sydney story</a>
+          <a href="#profile" class="btn">⌾ View my profile</a>
+        </div>
 
-  <!-- WHY COMMERZBANK -->
-  <section class="card">
-    <h2>🏦 Why Commerzbank</h2>
-    <p>
-      Commerzbank stands at a crucial point of digital evolution.
-      I am highly motivated to contribute to this transformation by combining
-      analytical thinking, international perspective and curiosity for innovation.
-    </p>
-  </section>
+        <div class="scroll">Scroll down ↓</div>
+      </div>
 
-  <!-- SKILLS / PROFILE -->
-  <section class="grid">
-    <div class="card">
-      <h2>🌍 International mindset</h2>
-      <p>
-        Living and working abroad has shaped my ability to adapt quickly,
-        understand global contexts and communicate across cultures.
-      </p>
-    </div>
+      <div class="video-card">
+        <div class="play">▶</div>
+        <div class="video-title">A payment moment<br>in Sydney</div>
+      </div>
+    </section>
 
-    <div class="card">
-      <h2>⚙️ Digital curiosity</h2>
-      <p>
-        I am deeply interested in digital systems, product thinking and how
-        technology can simplify complex processes.
-      </p>
-    </div>
-  </section>
+    <section class="wide-card" id="story">
+      <div class="payment-visual">
+        <div class="plain-icon">💳❌</div>
+        <div class="big-icon">🌐</div>
+        <div class="plain-icon">💳✅</div>
+      </div>
 
-  <!-- CONTACT -->
-  <section class="card">
-    <h2>📬 Contact</h2>
-    <p>Email: jan.kraege@icloud.com</p>
-    <p>LinkedIn: linkedin.com/in/jan-kraege</p>
-  </section>
+      <div>
+        <h2>A payment moment in Sydney</h2>
+        <p>A simple payment should just work.</p>
+        <p>
+          But while living abroad, I experienced how fragile digital systems can feel.
+          Same person. Same situation. Different outcome — depending on the system behind it.
+        </p>
+        <p><strong>That’s where better banking starts.</strong></p>
+      </div>
+    </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2026 Jan Kraege</p>
-  </footer>
+    <section class="section-grid" id="why-iddp">
+      <div class="card">
+        <div class="icon">🌐</div>
+        <h3>Why digital banking?</h3>
+        <p>
+          Digital banking is no longer just about transactions.
+        </p>
+        <p>
+          It is about trust in moments that matter, intuitive systems across borders and
+          seamless experiences in an increasingly global world.
+        </p>
+        <p>
+          Living and working in Australia showed me how financial systems directly shape everyday life.
+        </p>
+        <p><strong>That is exactly where I want to contribute.</strong></p>
+      </div>
 
-</div>
+      <div class="card">
+        <div class="icon">🏦</div>
+        <h3>Why Commerzbank?</h3>
+        <p>
+          What excites me about Commerzbank is the transformation of a traditional financial institution
+          into a more digital, customer-focused organisation.
+        </p>
+        <p>
+          The combination of strong roots in the German Mittelstand, a broad private customer base and
+          ongoing digital innovation creates a unique environment where change is not theoretical — but real.
+        </p>
+        <p><strong>I want to be part of that transformation.</strong></p>
+      </div>
 
+      <div class="card">
+        <div class="icon">🚀</div>
+        <h3>Why the IDDP?</h3>
+        <p>
+          The International Digital Development Program stands out because it combines learning with real responsibility.
+        </p>
+        <p>
+          Rotations across different areas, international exposure and early ownership create exactly the environment
+          I am looking for:
+        </p>
+        <p><strong>Not just understanding transformation — but actively shaping it.</strong></p>
+      </div>
+    </section>
+
+    <section class="profile-box" id="profile">
+      <h2 class="center-title">My profile in 60 seconds</h2>
+
+      <div class="profile-grid">
+        <div class="mini-card">
+          <div class="icon">💼</div>
+          <h3>Business & Strategy</h3>
+          <ul>
+            <li>Master’s in Business Management at UTS Sydney (Distinction, WAM 83.5).</li>
+            <li>Focus on global strategy and supply chains.</li>
+          </ul>
+        </div>
+
+        <div class="mini-card">
+          <div class="icon">📊</div>
+          <h3>Analytical & Data-driven</h3>
+          <ul>
+            <li>Experience in market analysis, customer insights and strategic recommendations.</li>
+            <li>Example: BRITA project — recommendation not to launch based on data.</li>
+          </ul>
+        </div>
+
+        <div class="mini-card">
+          <div class="icon">📣</div>
+          <h3>Marketing & Digital Execution</h3>
+          <ul>
+            <li>Hands-on experience in campaign management, performance analysis and content creation.</li>
+            <li>Tools: Mailchimp, Salesforce Marketing Cloud, Canva, AI.</li>
+          </ul>
+        </div>
+
+        <div class="mini-card">
+          <div class="icon">👥</div>
+          <h3>International Experience</h3>
+          <ul>
+            <li>Germany → Australia. Working and studying in international and intercultural environments.</li>
+            <li>Collaborating across diverse teams and cultures.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="bottom-grid">
+      <div>
+        <h2 class="underline">What I bring</h2>
+
+        <div class="bring-item">
+          <div class="icon">👤</div>
+          <div>
+            <h3>Customer Perspective</h3>
+            <p>I think from the user’s perspective — especially in moments of friction.</p>
+          </div>
+        </div>
+
+        <div class="bring-item">
+          <div class="icon">📈</div>
+          <div>
+            <h3>Analytical Thinking</h3>
+            <p>I use data to understand problems and make decisions.</p>
+          </div>
+        </div>
+
+        <div class="bring-item">
+          <div class="icon">🌍</div>
+          <div>
+            <h3>International Mindset</h3>
+            <p>I adapt quickly and work confidently across cultures.</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="ideas">
+        <h2 class="underline">Ideas I’d love to explore</h2>
+
+        <div class="ideas-grid">
+          <div class="idea-card">
+            <div class="icon">💳</div>
+            <h3>1. Global Payment Confidence</h3>
+            <p>A system that predicts payment issues abroad and suggests alternatives.</p>
+          </div>
+
+          <div class="idea-card">
+            <div class="icon">🧠</div>
+            <h3>2. Smart Financial Nudges</h3>
+            <p>Context-aware insights instead of generic banking notifications.</p>
+          </div>
+
+          <div class="idea-card">
+            <div class="icon">📱</div>
+            <h3>3. Frictionless Onboarding</h3>
+            <p>Simplifying identity and onboarding into a guided digital experience.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="rocket">🚀</div>
+
+      <h2>Let’s build banking that feels global, intuitive and reliable.</h2>
+
+      <div class="cta-buttons">
+        <a href="mailto:jan.kraege@icloud.com" class="btn btn-primary">✉ Email me</a>
+        <a href="https://www.linkedin.com/in/jan-kraege" target="_blank" class="btn">in LinkedIn</a>
+        <a href="Jan%20Kraege%20CV.pdf" download class="btn">▣ Download CV</a>
+      </div>
+    </section>
+
+    <footer>
+      <span>© 2026 Jan Kraege</span>
+      <span>jan.kraege@icloud.com</span>
+      <span>Sydney, Australia</span>
+    </footer>
+
+  </div>
 </body>
 </html>

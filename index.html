@@ -161,14 +161,6 @@
       box-shadow: 0 20px 45px rgba(0,0,0,0.17);
     }
 
-    .video-card video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 14px;
-      display: block;
-    }
-
     .play {
       width: 78px;
       height: 78px;
@@ -197,6 +189,7 @@
       transform: rotate(-2deg);
       text-shadow: 0 2px 10px rgba(0,0,0,0.35);
       pointer-events: none;
+      z-index: 2;
     }
 
     .video-title::after {
@@ -385,18 +378,11 @@
       font-size: 24px;
     }
 
-.ideas-grid {
-  display: flex;
-  gap: 22px;
-  justify-content: space-between;
-  align-items: stretch;
-  flex-wrap: nowrap;
-}
-
-.idea-card {
-  flex: 1;
-  min-width: 0;
-}
+    .ideas-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
 
     .idea-card {
       border: 1px solid #e7e7e7;
@@ -463,9 +449,12 @@
       }
 
       .section-grid,
-      .profile-grid,
-      .ideas-grid {
+      .profile-grid {
         grid-template-columns: 1fr;
+      }
+
+      .ideas-grid {
+        flex-direction: column;
       }
 
       .payment-visual {
@@ -533,15 +522,27 @@
       </div>
 
       <div class="video-card">
+
         <video
           id="sydneyVideo"
           controls
           poster="https://images.unsplash.com/photo-1523428096881-5bd79d043006?q=80&w=1200&auto=format&fit=crop"
+          style="
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            border-radius:14px;
+            display:block;
+          "
         >
           <source src="Video Sydney.mp4" type="video/mp4">
           Dein Browser unterstützt kein HTML5-Video.
         </video>
-        <div class="video-title" id="videoTitle">A challenge moment<br>in Sydney</div>
+
+        <div class="video-title" id="videoTitle">
+          A challenge moment<br>in Sydney
+        </div>
+
       </div>
     </section>
 

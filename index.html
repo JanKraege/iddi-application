@@ -385,11 +385,18 @@
       font-size: 24px;
     }
 
-    .ideas-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
+.ideas-grid {
+  display: flex;
+  gap: 22px;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: nowrap;
+}
+
+.idea-card {
+  flex: 1;
+  min-width: 0;
+}
 
     .idea-card {
       border: 1px solid #e7e7e7;

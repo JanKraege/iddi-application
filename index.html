@@ -392,8 +392,23 @@
       background: white;
     }
 
-    .idea-card .icon {
-      margin: 0 auto 18px;
+    .idea-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .idea-header .icon {
+      margin: 0;
+      width: 48px;
+      height: 48px;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .idea-header h3 {
+      margin: 0;
     }
 
     .cta {
@@ -695,20 +710,26 @@
 
         <div class="ideas-grid">
           <div class="idea-card">
-            <div class="icon">💳</div>
-            <h3>1. Reducing customer friction</h3>
+            <div class="idea-header">
+              <div class="icon">💳</div>
+              <h3>1. Reducing customer friction</h3>
+            </div>
             <p>Understanding where digital banking experiences become difficult — and turning these insights into better journeys.</p>
           </div>
 
           <div class="idea-card">
-            <div class="icon">🧠</div>
-            <h3>2. From insight to action</h3>
+            <div class="idea-header">
+              <div class="icon">🧠</div>
+              <h3>2. From insight to action</h3>
+            </div>
             <p>Using data and customer understanding to support better strategic decisions and project execution.</p>
           </div>
 
           <div class="idea-card">
-            <div class="icon">🤝</div>
-            <h3>3. Connecting teams and ideas</h3>
+            <div class="idea-header">
+              <div class="icon">🤝</div>
+              <h3>3. Connecting teams and ideas</h3>
+            </div>
             <p>Bringing business, product, technology and customer perspectives together to make transformation work.</p>
           </div>
         </div>

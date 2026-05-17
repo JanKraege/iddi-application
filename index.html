@@ -6,7 +6,6 @@
   <title>Jan Kraege – IDDP Application</title>
 
   <style>
-
     *{
       margin:0;
       padding:0;
@@ -28,23 +27,21 @@
 
     section{
       width:100%;
-      padding:120px 60px;
+      padding:140px 70px;
     }
 
     .container{
       width:100%;
-      max-width:1600px;
+      max-width:1650px;
       margin:0 auto;
     }
-
-    /* ---------------- NAV ---------------- */
 
     nav{
       width:100%;
       display:flex;
       justify-content:space-between;
       align-items:center;
-      padding:28px 60px;
+      padding:32px 70px;
       background:white;
       border-bottom:1px solid #ececec;
       position:sticky;
@@ -55,36 +52,34 @@
     .brand{
       display:flex;
       align-items:center;
-      gap:14px;
-      font-size:26px;
+      gap:16px;
+      font-size:30px;
       font-weight:900;
     }
 
     .logo{
-      width:46px;
-      height:40px;
+      width:52px;
+      height:46px;
       background:#ffcc00;
       clip-path: polygon(50% 0%, 100% 75%, 75% 75%, 50% 35%, 25% 75%, 0% 75%);
     }
 
     .nav-links{
       display:flex;
-      gap:42px;
+      gap:46px;
       align-items:center;
-      font-size:18px;
+      font-size:22px;
       font-weight:700;
     }
 
     .connect{
       background:#ffcc00;
-      padding:18px 28px;
-      border-radius:14px;
+      padding:20px 34px;
+      border-radius:16px;
       font-weight:800;
-      font-size:18px;
+      font-size:20px;
       box-shadow:0 10px 24px rgba(255,204,0,0.22);
     }
-
-    /* ---------------- HERO ---------------- */
 
     .hero{
       background:#f5f5f7;
@@ -92,12 +87,12 @@
     }
 
     .hero h1{
-      font-size:110px;
+      font-size:118px;
       line-height:0.95;
-      letter-spacing:-5px;
+      letter-spacing:-6px;
       font-weight:900;
-      max-width:1200px;
-      margin:0 auto 48px;
+      max-width:1350px;
+      margin:0 auto 58px;
     }
 
     .yellow{
@@ -105,30 +100,30 @@
     }
 
     .hero-text{
-      max-width:1050px;
+      max-width:1200px;
       margin:0 auto;
     }
 
     .hero-text p{
-      font-size:30px;
-      line-height:1.85;
-      margin-bottom:32px;
+      font-size:38px;
+      line-height:1.9;
+      margin-bottom:40px;
       color:#222;
     }
 
     .buttons{
       display:flex;
       justify-content:center;
-      gap:24px;
-      margin-top:52px;
+      gap:28px;
+      margin-top:64px;
       flex-wrap:wrap;
     }
 
     .btn{
-      padding:20px 34px;
-      border-radius:14px;
+      padding:22px 38px;
+      border-radius:16px;
       border:2px solid #111;
-      font-size:20px;
+      font-size:24px;
       font-weight:800;
       background:white;
       transition:0.2s ease;
@@ -144,23 +139,21 @@
       box-shadow:0 12px 24px rgba(255,204,0,0.25);
     }
 
-    /* ---------------- VIDEO ---------------- */
-
     .video-wrapper{
-      margin-top:90px;
+      margin-top:110px;
       display:flex;
       justify-content:center;
     }
 
     .video-card{
       width:100%;
-      max-width:1450px;
-      height:760px;
-      border-radius:38px;
+      max-width:1500px;
+      height:820px;
+      border-radius:42px;
       overflow:hidden;
       position:relative;
       background:black;
-      box-shadow:0 40px 80px rgba(0,0,0,0.18);
+      box-shadow:0 40px 90px rgba(0,0,0,0.18);
     }
 
     .video-card video{
@@ -171,10 +164,10 @@
 
     .video-title{
       position:absolute;
-      left:60px;
-      bottom:50px;
+      left:70px;
+      bottom:60px;
       color:white;
-      font-size:60px;
+      font-size:68px;
       line-height:1.05;
       font-weight:900;
       z-index:3;
@@ -184,14 +177,12 @@
     .video-title::after{
       content:"";
       display:block;
-      width:180px;
-      height:7px;
+      width:190px;
+      height:8px;
       border-radius:999px;
       background:#ffcc00;
-      margin-top:14px;
+      margin-top:16px;
     }
-
-    /* ---------------- STORY SECTION ---------------- */
 
     .story{
       background:white;
@@ -200,10 +191,10 @@
     .story-card{
       display:grid;
       grid-template-columns:1fr 1fr;
-      gap:80px;
+      gap:90px;
       background:#fafafa;
-      border-radius:36px;
-      padding:80px;
+      border-radius:40px;
+      padding:90px;
       align-items:center;
       box-shadow:0 12px 40px rgba(0,0,0,0.05);
     }
@@ -212,24 +203,22 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      gap:34px;
-      font-size:72px;
+      gap:40px;
+      font-size:82px;
     }
 
     .story-text h2{
-      font-size:54px;
-      margin-bottom:28px;
+      font-size:62px;
+      margin-bottom:34px;
       line-height:1.05;
     }
 
     .story-text p{
-      font-size:25px;
-      line-height:1.9;
-      margin-bottom:24px;
+      font-size:32px;
+      line-height:1.95;
+      margin-bottom:28px;
       color:#333;
     }
-
-    /* ---------------- CARDS ---------------- */
 
     .cards{
       background:#f5f5f7;
@@ -238,43 +227,41 @@
     .cards-grid{
       display:grid;
       grid-template-columns:repeat(3,1fr);
-      gap:34px;
+      gap:40px;
     }
 
     .card{
       background:white;
-      border-radius:30px;
-      padding:44px;
-      min-height:420px;
+      border-radius:34px;
+      padding:52px;
+      min-height:500px;
       box-shadow:0 12px 34px rgba(0,0,0,0.05);
     }
 
     .card-icon{
-      width:74px;
-      height:74px;
+      width:82px;
+      height:82px;
       border-radius:999px;
       background:#fff3bf;
       display:flex;
       align-items:center;
       justify-content:center;
-      font-size:34px;
-      margin-bottom:26px;
+      font-size:38px;
+      margin-bottom:30px;
     }
 
     .card h3{
-      font-size:34px;
-      margin-bottom:22px;
+      font-size:40px;
+      margin-bottom:28px;
       line-height:1.15;
     }
 
     .card p{
-      font-size:23px;
-      line-height:1.9;
+      font-size:29px;
+      line-height:1.95;
       color:#333;
-      margin-bottom:20px;
+      margin-bottom:22px;
     }
-
-    /* ---------------- PROFILE ---------------- */
 
     .profile{
       background:white;
@@ -282,40 +269,38 @@
 
     .section-title{
       text-align:center;
-      font-size:72px;
-      margin-bottom:80px;
-      letter-spacing:-3px;
+      font-size:82px;
+      margin-bottom:100px;
+      letter-spacing:-4px;
     }
 
     .profile-grid{
       display:grid;
       grid-template-columns:repeat(4,1fr);
-      gap:28px;
+      gap:34px;
     }
 
     .profile-card{
       background:#fafafa;
-      border-radius:28px;
-      padding:40px;
+      border-radius:32px;
+      padding:48px;
     }
 
     .profile-card h3{
-      font-size:30px;
-      margin-bottom:20px;
+      font-size:36px;
+      margin-bottom:26px;
     }
 
     .profile-card ul{
-      padding-left:20px;
+      padding-left:24px;
     }
 
     .profile-card li{
-      font-size:22px;
-      line-height:1.9;
-      margin-bottom:16px;
+      font-size:28px;
+      line-height:2;
+      margin-bottom:18px;
       color:#333;
     }
-
-    /* ---------------- CTA ---------------- */
 
     .cta{
       background:#111;
@@ -324,23 +309,24 @@
     }
 
     .cta h2{
-      font-size:76px;
+      font-size:86px;
       line-height:1.05;
-      max-width:1100px;
-      margin:0 auto 40px;
-      letter-spacing:-3px;
+      max-width:1200px;
+      margin:0 auto 44px;
+      letter-spacing:-4px;
     }
 
     .cta p{
-      font-size:30px;
+      font-size:36px;
       color:#ddd;
-      margin-bottom:54px;
+      margin-bottom:60px;
+      line-height:1.8;
     }
 
     .cta-buttons{
       display:flex;
       justify-content:center;
-      gap:24px;
+      gap:28px;
       flex-wrap:wrap;
     }
 
@@ -348,27 +334,34 @@
       border:none;
     }
 
-    /* ---------------- FOOTER ---------------- */
-
     footer{
       background:#111;
       color:#999;
       text-align:center;
-      padding:34px;
-      font-size:16px;
+      padding:40px;
+      font-size:20px;
       border-top:1px solid rgba(255,255,255,0.08);
     }
 
-    /* ---------------- RESPONSIVE ---------------- */
-
     @media(max-width:1200px){
-
       .hero h1{
-        font-size:78px;
+        font-size:82px;
       }
 
       .hero-text p{
+        font-size:26px;
+      }
+
+      .story-text p{
         font-size:24px;
+      }
+
+      .card p{
+        font-size:22px;
+      }
+
+      .profile-card li{
+        font-size:22px;
       }
 
       .cards-grid{
@@ -382,11 +375,9 @@
       .story-card{
         grid-template-columns:1fr;
       }
-
     }
 
     @media(max-width:800px){
-
       nav{
         flex-direction:column;
         gap:24px;
@@ -397,6 +388,7 @@
         flex-wrap:wrap;
         justify-content:center;
         gap:18px;
+        font-size:18px;
       }
 
       section{
@@ -404,38 +396,46 @@
       }
 
       .hero h1{
-        font-size:52px;
-        line-height:1.02;
+        font-size:54px;
+        line-height:1.05;
       }
 
       .hero-text p{
-        font-size:20px;
+        font-size:22px;
+      }
+
+      .story-card{
+        padding:40px 28px;
+      }
+
+      .story-text h2{
+        font-size:42px;
       }
 
       .story-text p{
-        font-size:20px;
-      }
-
-      .card p{
-        font-size:19px;
-      }
-
-      .profile-card li{
-        font-size:19px;
-      }
-
-      .cta p{
         font-size:21px;
       }
 
+      .card p{
+        font-size:20px;
+      }
+
+      .profile-card li{
+        font-size:20px;
+      }
+
+      .cta p{
+        font-size:24px;
+      }
+
       .video-card{
-        height:380px;
+        height:420px;
       }
 
       .video-title{
-        font-size:30px;
-        left:24px;
-        bottom:24px;
+        font-size:34px;
+        left:28px;
+        bottom:28px;
       }
 
       .profile-grid{
@@ -443,22 +443,19 @@
       }
 
       .section-title{
-        font-size:48px;
+        font-size:52px;
       }
 
       .cta h2{
-        font-size:46px;
+        font-size:52px;
       }
-
     }
-
   </style>
 </head>
 
 <body>
 
   <nav>
-
     <div class="brand">
       <div class="logo"></div>
       <span>COMMERZBANK</span>
@@ -475,13 +472,10 @@
     <a class="connect" href="mailto:jan.kraege@icloud.com">
       Let’s connect
     </a>
-
   </nav>
 
   <section class="hero" id="about">
-
     <div class="container">
-
       <h1>
         From Sydney to Frankfurt —
         turning complex challenges into
@@ -489,7 +483,6 @@
       </h1>
 
       <div class="hero-text">
-
         <p>
           I’m Jan Kraege, currently completing my Master’s in Sydney.
           What drives me is not just interest in digital transformation —
@@ -501,11 +494,9 @@
           I am applying as someone who wants to take ownership, realise projects and help make digital banking work better
           from a strategic and customer-focused perspective.
         </p>
-
       </div>
 
       <div class="buttons">
-
         <a href="#video" class="btn btn-primary">
           ▶ Watch my Sydney story
         </a>
@@ -513,13 +504,10 @@
         <a href="#profile" class="btn">
           ⌾ View my profile
         </a>
-
       </div>
 
       <div class="video-wrapper" id="video">
-
         <div class="video-card">
-
           <video
             id="sydneyVideo"
             controls
@@ -532,27 +520,19 @@
             A challenge moment<br>
             in Sydney
           </div>
-
         </div>
-
       </div>
-
     </div>
-
   </section>
 
   <section class="story">
-
     <div class="container">
-
       <div class="story-card">
-
         <div class="story-visual">
           💳 ❌ 🧩 ✅ 🚀
         </div>
 
         <div class="story-text">
-
           <h2>A payment moment in Sydney</h2>
 
           <p>
@@ -572,23 +552,15 @@
             I want to understand what is behind them,
             bring the right perspectives together and move towards a solution.
           </p>
-
         </div>
-
       </div>
-
     </div>
-
   </section>
 
   <section class="cards" id="why">
-
     <div class="container">
-
       <div class="cards-grid">
-
         <div class="card">
-
           <div class="card-icon">🧠</div>
 
           <h3>Why digital banking?</h3>
@@ -602,10 +574,13 @@
             across customers, processes, products and expectations.
           </p>
 
+          <p>
+            What fascinates me is how many digital challenges are strategic:
+            how systems are designed, how teams collaborate and how ideas become usable solutions.
+          </p>
         </div>
 
         <div class="card">
-
           <div class="card-icon">🏦</div>
 
           <h3>Why Commerzbank?</h3>
@@ -615,10 +590,13 @@
             to actively contribute to transformation inside a large organisation with real complexity.
           </p>
 
+          <p>
+            Strong roots in the German Mittelstand, a broad private customer base and digital ambition create an environment
+            where strategic thinking has to meet real execution.
+          </p>
         </div>
 
         <div class="card">
-
           <div class="card-icon">🚀</div>
 
           <h3>Why the IDDP?</h3>
@@ -628,26 +606,23 @@
             because it combines learning with real responsibility.
           </p>
 
+          <p>
+            Rotations across different areas, international exposure and early ownership create an environment where ideas
+            are not only discussed, but implemented.
+          </p>
         </div>
-
       </div>
-
     </div>
-
   </section>
 
   <section class="profile" id="profile">
-
     <div class="container">
-
       <h2 class="section-title">
         My profile in 60 seconds
       </h2>
 
       <div class="profile-grid">
-
         <div class="profile-card">
-
           <h3>💼 Business & Strategy</h3>
 
           <ul>
@@ -655,52 +630,84 @@
             <li>Focus on global strategy and supply chains.</li>
             <li>Strong interest in structured problem-solving.</li>
           </ul>
-
         </div>
 
         <div class="profile-card">
-
           <h3>📊 Analytical & Data-driven</h3>
 
           <ul>
             <li>Experience in market analysis and strategic recommendations.</li>
             <li>Comfortable breaking down complexity into decisions.</li>
+            <li>Focused on clear, data-based thinking.</li>
           </ul>
-
         </div>
 
         <div class="profile-card">
-
           <h3>🛠️ Execution Mindset</h3>
 
           <ul>
             <li>Campaign management and project execution experience.</li>
             <li>Focused on implementation and ownership.</li>
+            <li>Interested in moving ideas into real outcomes.</li>
           </ul>
-
         </div>
 
         <div class="profile-card">
-
           <h3>🌍 International Experience</h3>
 
           <ul>
             <li>Germany → Australia.</li>
             <li>Comfortable in intercultural environments.</li>
+            <li>Adaptable, curious and open to new challenges.</li>
           </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <section class="cards" id="ideas">
+    <div class="container">
+      <h2 class="section-title">
+        Challenges I’d love to explore
+      </h2>
+
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon">💳</div>
+
+          <h3>Reducing customer friction</h3>
+
+          <p>
+            Understanding where digital banking experiences become difficult —
+            and turning these insights into better journeys.
+          </p>
         </div>
 
+        <div class="card">
+          <div class="card-icon">🧠</div>
+
+          <h3>From insight to action</h3>
+
+          <p>
+            Using data and customer understanding to support better strategic decisions and project execution.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🤝</div>
+
+          <h3>Connecting teams and ideas</h3>
+
+          <p>
+            Bringing business, product, technology and customer perspectives together to make transformation work.
+          </p>
+        </div>
       </div>
-
     </div>
-
   </section>
 
   <section class="cta" id="contact">
-
     <div class="container">
-
       <h2>
         Let’s turn complex challenges into
         solutions that actually work.
@@ -711,27 +718,26 @@
       </p>
 
       <div class="cta-buttons">
-
         <a href="mailto:jan.kraege@icloud.com" class="btn btn-primary">
           ✉ Email me
         </a>
 
-        <a href="https://www.linkedin.com/in/jan-kraege" class="btn">
+        <a href="https://www.linkedin.com/in/jan-kraege" target="_blank" class="btn">
           in LinkedIn
         </a>
 
+        <a href="Jan%20Kraege%20CV.pdf" download class="btn">
+          ▣ Download CV
+        </a>
       </div>
-
     </div>
-
   </section>
 
   <footer>
-    © 2026 Jan Kraege · Sydney, Australia
+    © 2026 Jan Kraege · jan.kraege@icloud.com · Sydney, Australia
   </footer>
 
   <script>
-
     const video = document.getElementById("sydneyVideo");
     const title = document.getElementById("videoTitle");
 
@@ -750,7 +756,6 @@
     window.onload = function () {
       window.scrollTo(0, 0);
     };
-
   </script>
 
 </body>
